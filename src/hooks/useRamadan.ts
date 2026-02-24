@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { ramadanSchedule } from '../data/ramadanData';
 import { parse, isAfter, isBefore, differenceInSeconds, addDays, format } from 'date-fns';
@@ -90,10 +89,10 @@ export function useRamadan() {
       }
 
       // Hijri Date Calculation (Approximate)
-      // 18 Feb 2026 is 1 Ramadan 1447
+      // 19 Feb 2026 is 1 Ramadan 1447
       // We can calculate offset from that
       let hijriDateStr = '';
-      const startRamadan = parse('18 Feb 2026', 'dd MMM yyyy', new Date());
+      const startRamadan = parse('19 Feb 2026', 'dd MMM yyyy', new Date());
       if (!isBefore(now, startRamadan)) {
           const daysDiff = Math.floor(differenceInSeconds(now, startRamadan) / (3600 * 24));
           const ramadanDay = daysDiff + 1;
